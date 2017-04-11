@@ -80,6 +80,7 @@ RUN apt-get update -qq && \
 RUN cd $SETUP_DIR/naclports/src && \
 	git config --global user.email "me@example.com" && \
 	git config --global user.name "Me Example" && \
+	sed -i 's/.*RunMinigzip[ ]*$/#&/' ports/zlib/build.sh && \
 	NACL_ARCH=pnacl make opencv
 
 
