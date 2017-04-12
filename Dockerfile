@@ -84,4 +84,7 @@ RUN cd $SETUP_DIR/naclports/src && \
 	NACL_ARCH=pnacl make opencv
 
 
+ARG PROJECT_DIR="/home/project"
+RUN mkdir -p $PROJECT_DIR
+WORKDIR $PROJECT_DIR
 
